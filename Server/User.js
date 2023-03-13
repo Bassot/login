@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getModel = exports.getSchema = void 0;
+exports.newUser = exports.getModel = exports.getSchema = void 0;
 var mongoose_1 = require("mongoose");
 var userSchema = new mongoose_1.default.Schema({
     username: String,
@@ -20,5 +20,14 @@ function getModel() {
     return model;
 }
 exports.getModel = getModel;
-//hey
+function newUser(user) {
+    var u = {
+        username: user.username,
+        password: user.password,
+        email: user.email,
+        date: user.date
+    };
+    return new model(u);
+}
+exports.newUser = newUser;
 //# sourceMappingURL=User.js.map

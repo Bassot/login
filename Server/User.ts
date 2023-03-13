@@ -16,5 +16,12 @@ export function getModel(){
     }
     return model;
 }
-
-//hey
+export function newUser(user){
+    let u = {
+        username: user.username,
+        password: user.password,
+        email: user.email,
+        date: user.date
+    }
+    return new model(u);
+}
